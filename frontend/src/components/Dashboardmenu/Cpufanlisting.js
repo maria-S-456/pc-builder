@@ -5,9 +5,9 @@ import products from '../../products';
 const Cpulisting = () =>{
 	return (
 		<>
-		<h2>CPU Listing</h2>
+		<h2>CPU Fan Listing</h2>
 		<Row>
-			{products.filter(product => product.partType === 'cpu').map(filteredPart => (
+			{products.filter(product => product.partType === 'cpufan').map(filteredPart => (
 				<Col>
 					{filteredPart.name}
 				</Col>

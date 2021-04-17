@@ -2,12 +2,12 @@ import React from 'react';
 import {Row, Col} from 'react-bootstrap';
 import products from '../../products';
 
-const Cpulisting = () =>{
+const Caselisting = () =>{
 	return (
 		<>
-		<h2>CPU Listing</h2>
+		<h2>Case Listing</h2>
 		<Row>
-			{products.filter(product => product.partType === 'cpu').map(filteredPart => (
+			{products.filter(product => product.partType === 'case').map(filteredPart => (
 				<Col>
 					{filteredPart.name}
 				</Col>
@@ -17,4 +17,4 @@ const Cpulisting = () =>{
 	)
 }
 
-export default Cpulisting;
+export default Caselisting;
