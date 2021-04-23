@@ -1,30 +1,21 @@
-import React, {useEffect, useState} from 'react';
-import {Row, Col} from 'react-bootstrap';
-//import products from '../../products';
-import axios from 'axios';
+import React from 'react';
+import {Row, Col, ListGroup} from 'react-bootstrap';
 
-const Memorylisting = () =>{
-	const [products, setProducts] = useState([])
-
-	useEffect(() => {
-		const fetchProducts = async () => {
-			const {data} = await axios.get('/api')
-
-			setProducts(data)
-		}
-
-		fetchProducts()
-	}, [])
+const Memorylisting = (props) =>{
 	return (
 		<>
 		<h2>Memory Listing</h2>
-		<Row>
-			{products.filter(product => product.partType === 'memory').map(filteredPart => (
-				<Col>
+		<Col>
+		
+			{props.prod.filter(product => product.partType === 'memory').map(filteredPart => (
+				<Row>
+					
 					{filteredPart.name}
-				</Col>
+					
+				</Row>
 			))}
-		</Row>
+		
+		</Col>
 		</>
 	)
 }

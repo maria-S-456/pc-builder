@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Row, Col, Tab, Tabs} from 'react-bootstrap';
+import {Container, Tab, Tabs} from 'react-bootstrap';
 import Mbform from './Newpartsforms/Mbform';
 import Cpuform from './Newpartsforms/Cpuform';
 import Hddform from './Newpartsforms/Hddform';

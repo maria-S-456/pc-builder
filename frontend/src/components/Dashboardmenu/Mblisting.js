@@ -1,25 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {Row, Col} from 'react-bootstrap';
-//import products from '../../products';
-import axios from 'axios';
 
-const Mblisting = () =>{
-	const [products, setProducts] = useState([])
-
-	useEffect(() => {
-		const fetchProducts = async () => {
-			const {data} = await axios.get('/api')
-
-			setProducts(data)
-		}
-
-		fetchProducts()
-	}, [])
+const Mblisting = (props) =>{
+	
 	return (
 		<>
 		<h2>MB Listing</h2>
 		<Row>
-			{products.filter(product => product.partType === 'mb').map(filteredPart => (
+			{props.prod.filter(product => product.partType === 'mb').map(filteredPart => (
 				<Col>
 					{filteredPart.name}
 				</Col>
