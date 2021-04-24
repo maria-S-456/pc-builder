@@ -1,5 +1,5 @@
 import React from 'react';
-import {Row, Col} from 'react-bootstrap';
+import {Row} from 'react-bootstrap';
 
 const Listing = (props) =>{
 	const {setPartId} = props;

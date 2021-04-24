@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import {Container, Tabs, Tab} from 'react-bootstrap';
-import Casefanlisting from './Dashboardmenu/Casefanlisting';
-import Caselisting from './Dashboardmenu/Caselisting';
-import Cpufanlisting from './Dashboardmenu/Cpufanlisting';
-import Cpulisting from './Dashboardmenu/Cpulisting';
-import Gpulisting from './Dashboardmenu/Gpulisting';
-import Hddlisting from './Dashboardmenu/Hddlisting';
-import Mblisting from './Dashboardmenu/Mblisting';
-import Memorylisting from './Dashboardmenu/Memorylisting';
-import Psulisting from './Dashboardmenu/Psulisting';
-import Ssdlisting from './Dashboardmenu/Ssdlisting';
+import Casefanpage from './Dashboardmenu/Casefanpage';
+import Casepage from './Dashboardmenu/Casepage';
+import Cpufanpage from './Dashboardmenu/Cpufanpage';
+import Cpupage from './Dashboardmenu/Cpupage';
+import Gpupage from './Dashboardmenu/Gpupage';
+import Hddpage from './Dashboardmenu/Hddpage';
+import Mbpage from './Dashboardmenu/Mbpage';
+import Memorypage from './Dashboardmenu/Memorypage';
+import Psupage from './Dashboardmenu/Psupage';
+import Ssdpage from './Dashboardmenu/Ssdpage';
 import Testpartpage from './Dashboardmenu/Testpartpage';
 import axios from 'axios';
 
@@ -31,34 +31,34 @@ const Dashboard = () => {
 				<h1>Hello</h1>
 				<Tabs defaultActiveKey="MB" id="menu-tabs">
 					<Tab eventKey="mb" title="MB"> 
-						<Mblisting prod={products} />
+						<Mbpage prod={products} />
 					</Tab>
 					<Tab eventKey="cpu" title="CPU"> 
-						<Cpulisting prod={products} />
+						<Cpupage prod={products} />
 					</Tab>
 					<Tab eventKey="hdd" title="HDD"> 
-						<Hddlisting prod={products} />
+						<Hddpage prod={products} />
 					</Tab>
 					<Tab eventKey="ssd" title="SSD"> 
-						<Ssdlisting prod={products} />
+						<Ssdpage prod={products} />
 					</Tab>
 					<Tab eventKey="memory" title="Memory"> 
-						<Memorylisting prod={products} />
+						<Memorypage prod={products} />
 					</Tab>
 					<Tab eventKey="case" title="Case"> 
-						<Caselisting prod={products} />
+						<Casepage prod={products} />
 					</Tab>
 					<Tab eventKey="psu" title="PSU"> 
-						<Psulisting prod={products} />
+						<Psupage prod={products} />
 					</Tab>
 					<Tab eventKey="gpu" title="GPU"> 
-						<Gpulisting prod={products} />
+						<Gpupage prod={products} />
 					</Tab>
 					<Tab eventKey="casefan" title="Case Fan"> 
-						<Casefanlisting prod={products} />
+						<Casefanpage prod={products} />
 					</Tab>
 					<Tab eventKey="cpufan" title="CPU Fan"> 
-						<Cpufanlisting prod={products} />
+						<Cpufanpage prod={products} />
 					</Tab>
 					<Tab eventKey="testpage" title="Test"> 
 						<Testpartpage prod={products} />
