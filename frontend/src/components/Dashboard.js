@@ -28,7 +28,6 @@ const Dashboard = () => {
 	return (
 		<>
 			<Container>
-				<h1>Hello</h1>
 				<Tabs defaultActiveKey="MB" id="menu-tabs">
 					<Tab eventKey="mb" title="MB"> 
 						<Mbpage prod={products} />

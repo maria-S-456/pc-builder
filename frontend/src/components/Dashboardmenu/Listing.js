@@ -10,8 +10,8 @@ const Listing = (props) =>{
 		<h2>Listing</h2>
 		
 			{props.products.filter(product => product.partType === props.partType).map(filteredPart => (
-				<Row>
-					<p onClick={(e) => setPartId(e.target.getAttribute('name'))} name={filteredPart._id}>{filteredPart.name}</p>
+				<Row className="Row">
+					<p key={filteredPart._id} onClick={(e) => setPartId(e.target.getAttribute('name'))} name={filteredPart._id}>{filteredPart.name}</p>
 
 				</Row>
 			))}
