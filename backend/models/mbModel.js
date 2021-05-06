@@ -1,11 +1,15 @@
 import mongoose from 'mongoose';
 
 const storageSchema = mongoose.Schema({
-	name: {type: String, required: true}
+	name: {type: Boolean, required: true}
 })
 
 const mbSchema = mongoose.Schema({
 	name: {
+		type: String,
+		required: true
+	},
+	partType: {
 		type: String,
 		required: true
 	},
@@ -30,6 +34,10 @@ const mbSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
+	maxMemorySupported: {
+		type: String,
+		required: true
+	},
 	supportedChannel: {
 		type: String,
 		required: true
@@ -38,7 +46,15 @@ const mbSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
-	supportedStorage: [storageSchema]
+	storageSsd: {
+		type: Boolean
+	},
+	storageHhd: {
+		type: Boolean
+	},
+	storagem2: {
+		type: Boolean
+	}
 }, {
 	timestamps: true
 })

@@ -5,6 +5,10 @@ const hddSchema = mongoose.Schema({
 		type: String,
 		required: true
 	},
+	partType: {
+		type: String,
+		required: true
+	},
 	brand: {
 		type: String,
 		required: true
