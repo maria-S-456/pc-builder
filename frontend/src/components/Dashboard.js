@@ -18,7 +18,7 @@ const Dashboard = () => {
 
 	useEffect(() => {
 		const fetchProducts = async () => {
-			const {data} = await axios.get('/api')
+			const {data} = await axios.get('/api/products')
 
 			setProducts(data)
 		}

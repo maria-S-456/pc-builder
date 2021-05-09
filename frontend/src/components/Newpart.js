@@ -10,8 +10,9 @@ import Psuform from './Newpartsforms/Psuform';
 import Casefanform from './Newpartsforms/Casefanform';
 import Cpufanform from './Newpartsforms/Cpufanform';
 import axios from 'axios';
-/*
+
 const Newpart = () => {
+	/*
 	const [products, setProducts] = useState([])
 
 	useEffect(() => {
