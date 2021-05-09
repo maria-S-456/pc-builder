@@ -1,14 +1,17 @@
-import express from 'express';
-import asyncHandler from 'express-async-handler';
+/*
+const express = require('express');
+const asyncHandler = require('express-async-handler');
 const router = express.Router();
-import Product from '../models/productModel.js';
+const Product = '../models/productModel.js';
+const Mybuild = '../models/mybuildModel.js';
 
-router.get('/', asyncHandler(async(req, res) => {
+// Product
+router.get('/products', asyncHandler(async(req, res) => {
 	const products = await Product.find({})
 	res.json(products);
 }))
 
-router.get('/:id', asyncHandler(async (req, res) => {
+router.get('/products/:id', asyncHandler(async (req, res) => {
 	const product = await Product.findById(req.params.id)
 		if(product){
 			res.json(product);
@@ -17,5 +20,33 @@ router.get('/:id', asyncHandler(async (req, res) => {
 		}
 		
 }))
+router.post('/products', asyncHandler(async(req, res) =>{
+	//console.log(res.data)
+}))
 
-export default router
+// Mybuild
+router.get('/mybuild', asyncHandler(async(req, res) => {
+	const mybuilds = await Mybuild.find({})
+	res.json(mybuilds)
+}))
+
+router.get('/mybuild/:id', asyncHandler(async (req, res) => {
+	const mybuild = await Mybuild.findById(req.params.id)
+		if(mybuild){
+			res.json(mybuild);
+		} else{
+			res.status(404).json({message: 'Mybuild not found'})
+		}
+		
+}))
+module.exports = router
+
+*/
+
+const ProductController = require("./../controllers/products.controller");
+
+module.exports = (app) => {
+	app.get("/api/products", ProductController.getAll);
+	app.get("/api/products/:id", ProductController.getOne);
+	app.post("/api/products", ProductController.create);
+};

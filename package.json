@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "type": "module",
   "dependencies": {
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.6.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.5.1",
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",

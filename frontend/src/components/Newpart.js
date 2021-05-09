@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Container, Tab, Tabs} from 'react-bootstrap';
 import Mbform from './Newpartsforms/Mbform';
 import Cpuform from './Newpartsforms/Cpuform';
@@ -9,8 +9,20 @@ import Caseform from './Newpartsforms/Caseform';
 import Psuform from './Newpartsforms/Psuform';
 import Casefanform from './Newpartsforms/Casefanform';
 import Cpufanform from './Newpartsforms/Cpufanform';
-
+import axios from 'axios';
+/*
 const Newpart = () => {
+	const [products, setProducts] = useState([])
+
+	useEffect(() => {
+		const createProducts = async () => {
+			const {data} = await axios.post('/api')
+
+			setProducts(data)
+		}
+
+		createProducts()
+	}, []) */
 	return (
 		<>
 			<h2>Add new Component</h2>

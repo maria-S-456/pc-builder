@@ -1,7 +1,40 @@
 import React from 'react';
 import {Form, Table, Button} from 'react-bootstrap';
+import axios from 'axios'
 
 const Caseform = () => {
+
+	
+	/*
+	const [partType, setPartType] = useState("");
+	const [name, setName] = useState(""),
+	const [brand, setBrand] = useState(""),
+    const [type, setType] = useState(""),
+    const [compatibility, setCompatibility] = useState(""),
+    const [gpulength, setGpulength] = useState(""),
+    const [psulength, setPsulength] = useState("");
+
+    const createCase = (e) => {
+    	e.preventDefault();
+    	axios.post("http://localhost:5000/api/products", {
+    		partType: partType,
+    		name: name,
+    		brand: brand,
+    		type: type,
+    		compatibility: compatibility,
+    		gpulength: gpulength,
+    		psulength: psulength
+    	})
+    	.then((res) => {
+    		if(res.data.errors){
+    			setErrs(res.data.errors)
+    		} else{
+    			navigate("/api/products/" + res.data._id)
+    		}
+    	})
+    	.catch((err) => console.log(err));
+    } */
+
 	return (
 		<div>
 			<Form>
@@ -58,8 +91,6 @@ const Caseform = () => {
 								<td><Form.Check aria-label="bottom-140" /></td>
 								<td><Form.Control type="number" placeholder="#" /></td>
 							</tr>
-
-
 						</tbody>
 					</Table>
 				</Form.Group>

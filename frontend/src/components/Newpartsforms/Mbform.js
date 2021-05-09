@@ -6,12 +6,10 @@ const Mbform = () => {
 		<div>
 			<Form>
 				<Form.Group controlId="mb-form">
-					<Form.Label>Model Name</Form.Label>
-					<Form.Control type="text" placeholder="Model" />
+					<Form.Label>Name</Form.Label>
+					<Form.Control type="text" placeholder="Name" />
 					<Form.Label>Brand</Form.Label>
-					<Form.Control type="text" placeholder="Brand" />
-					<Form.Label>Series</Form.Label>
-					<Form.Control type="text" placeholder="Series" />
+					<Form.Control type="text" placeholder="Brand" />					
 					<Form.Label>CPU Socket Type</Form.Label>
 					<Form.Control type="text" placeholder="Socket Type" />
 					<Form.Label>Number of Memory slots</Form.Label>
@@ -20,6 +18,13 @@ const Mbform = () => {
 					<Form.Control type="text" placeholder="Memory Slot pins" />
 					<Form.Label>Maximum Memory Supported</Form.Label>
 					<Form.Control type="text" placeholder="Max memory" />
+					<Form.Label>Memory Standard</Form.Label>
+					<Form.Control type="text" placeholder="Memory standard" />
+					<Form.Label>CPU brand</Form.Label>
+					<Form.Control as="select">
+				    	<option>Intel</option>
+				    	<option>AMD</option>
+				    </Form.Control>
 					<Form.Label>Channel Supported</Form.Label>
 					<Form.Control type="text" placeholder="Channel Supported" />
 					<Form.Label>Form Factor</Form.Label>
