@@ -34,11 +34,11 @@ const Authpage = ({setToken}) => {
 					<Col>
 						<Form className='my-10' onSubmit={handleSubmit}>
 							<h2>Login</h2>
-							<Form.Group controlId="formEmailLogin">
-								<Form.Label>Email</Form.Label>
-								<Form.Control type="email" placeholder="Enter email address" onChange={e => setUsername(e.target.value)} />					
-								<Form.Control type="password" placeholder="Enter password" onChange={e => setPassword(e.target.value)} />								
-							</Form.Group>
+							
+								<label>Email</label>
+								<input type="loginemail" placeholder="Enter email address" onChange={e => setUsername(e.target.value)} />					
+								<input id="loginpassword" type="password" placeholder="Enter password" onChange={e => setPassword(e.target.value)} />								
+							
 							<Button variant="primary" type="submit">Login</Button>
 						</Form>
 					</Col>					

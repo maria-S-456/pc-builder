@@ -3,9 +3,10 @@ import Dashboard from './Dashboard';
 import Mybuildpage from './Mybuildpage';
 import {Tabs, Tab} from 'react-bootstrap';
 import Authpage from './Authpage';
+import useToken from './useToken'
 
 const Main = () => {
-	const [token, setToken] = useState();
+	const {token, setToken} = useToken()
 
 	if(!token){
 		return <Authpage setToken={setToken} />
