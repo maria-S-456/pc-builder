@@ -1,16 +1,17 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-//const connectDB = require('./config/db.js');
 const dotenv = 'dotenv';
-//const productRoutes = require('./routes/productRoutes.js')
+const mongoose = require('mongoose');
+const bodyParser = require("body-parser")
 
-//import mybuildRoutes from './routes/mybuildRoutes.js'
-
-//connectDB()
+// Bodyparser middleware
+app.use(bodyParser.urlencoded({
+	extended: false
+}))
+app.use(bodyParser.json())
 
 //Mongoose connection
-const mongoose = require('mongoose');
 require('dotenv').config();
 
 mongoose.connect(`${process.env.MONGO_URI}`, {
@@ -24,9 +25,17 @@ app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
+// tokens
+app.use('/auth', (req,res) => {
+	res.send({
+		token: 'test123'
+	})
+})
+
 // Bring in Routes
 require("./config/db")
 require("./routes/productRoutes")(app)
+require("./routes/userRoutes")(app)
 
 //app.use('/api/mybuild', mybuildRoutes)
 //app.use('/api', productRoutes)

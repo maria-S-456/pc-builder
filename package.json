@@ -12,10 +12,13 @@
     "dotenv": "^8.5.1",
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
+    "is-empty": "^1.2.0",
     "mongoose": "^5.12.7",
+    "prop-types": "^15.7.2",
     "react-bootstrap": "^1.5.2",
     "react-router-dom": "^5.2.0",
-    "react-tabs": "^3.2.1"
+    "react-tabs": "^3.2.1",
+    "validator": "^13.6.0"
   },
   "devDependencies": {
     "concurrently": "^6.0.2",

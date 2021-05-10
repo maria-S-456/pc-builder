@@ -1,3 +1,4 @@
+/*
 const mongoose = require('mongoose');
 
 const listSchema = mongoose.Schema({
@@ -24,3 +25,4 @@ const mybuildSchema = mongoose.Schema({
 })
 const Mybuild = mongoose.model('Mybuild', mybuildSchema)
 module.exports = Mybuild
+*/
