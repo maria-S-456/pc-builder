@@ -1,43 +1,48 @@
 import React, {useState} from 'react';
 import {Form, Container, Row, Col, Button} from 'react-bootstrap';
-import PropTypes from 'prop-types'
+//import PropTypes from 'prop-types';
+import axios from 'axios'
+import {navigate} from '@reach/router'
 
-async function loginUser(credentials){
-	return fetch('http://localhost:5000/auth',{
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify(credentials)
-	})
-	.then(data => data.json())
-}
+function Authpage({setLoggedIn}){
 
-const Authpage = ({setToken}) => {
-	const [username, setUsername] = useState()
-	const [password, setPassword] = useState()
 
-	const handleSubmit = async e => {
-		e.preventDefault();
-		const token = await loginUser({
-			username,
-			password
-		});
+	
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	const [errorMessage, setErrorMessage] = useState("");
 
-		setToken(token)
-	}
+	const login = event => {
+		event.preventDefault();
+		axios.post("http://localhost:5000/api/users/login", 
+		{email, password},
+		{
+			withCredentials: true
+		}
+		)
+		.then((res) => {
+			console.log(res);
+			navigate("/main")
+		})
+		.catch(err => {
+			console.log(err.response);
+			setErrorMessage(err.response.data.msg)
+		})
+	} 
+	
 	return(
 		<>
 			
 			<Container>
 				<Row>
 					<Col>
-						<Form className='my-10' onSubmit={handleSubmit}>
+						 /*<p>{errorMessage ? errorMessage : ""}</p> */
+						<Form className='my-10' /*onSubmit={login} */>
 							<h2>Login</h2>
 							
 								<label>Email</label>
-								<input type="loginemail" placeholder="Enter email address" onChange={e => setUsername(e.target.value)} />					
-								<input id="loginpassword" type="password" placeholder="Enter password" onChange={e => setPassword(e.target.value)} />							
+								<input id="loginemail" type="text" name="email" placeholder="Enter email address" onChange={(e) => setEmail(e.target.value)} />					
+								<input id="loginpassword" type="password" name="password" placeholder="Enter password" onChange={(e) => setPassword(e.target.value)} />							
 							<Button variant="primary" type="submit">Login</Button>
 						</Form>
 					</Col>					
@@ -46,9 +51,4 @@ const Authpage = ({setToken}) => {
 		</>
 	)
 }
-
-Authpage.propTypes = {
-	setToken: PropTypes.func.isRequired
-}
-
 export default Authpage;

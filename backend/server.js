@@ -4,12 +4,15 @@ const cors = require('cors');
 const dotenv = 'dotenv';
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser")
+const cookieParser = require("cookie-parser")
+const jwt = require('jsonwebtoken')
 
 // Bodyparser middleware
 app.use(bodyParser.urlencoded({
 	extended: false
 }))
 app.use(bodyParser.json())
+app.use(cookieParser())
 
 //Mongoose connection
 require('dotenv').config();
@@ -21,7 +24,10 @@ mongoose.connect(`${process.env.MONGO_URI}`, {
 .then(() => console.log("Established a connection to the database"))
 .catch((err) => console.log("Something went wrong when connecting to the database", err));
 
-app.use(cors())
+app.use(cors({
+	credentials: true,
+	origin: "http://localhost:3000"
+}))
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
