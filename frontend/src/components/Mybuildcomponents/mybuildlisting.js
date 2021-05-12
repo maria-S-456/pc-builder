@@ -2,8 +2,9 @@ import React from 'react';
 import {Row} from 'react-bootstrap';
 
 
-const Mybuildlisting = () =>{	
+const Mybuildlisting = (props) =>{	
 
+	//const {setPartId} = props;
 	return (
 		<>
 		

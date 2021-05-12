@@ -12,18 +12,6 @@ import Cpufanform from './Newpartsforms/Cpufanform';
 import axios from 'axios';
 
 const Newpart = () => {
-	/*
-	const [products, setProducts] = useState([])
-
-	useEffect(() => {
-		const createProducts = async () => {
-			const {data} = await axios.post('/api')
-
-			setProducts(data)
-		}
-
-		createProducts()
-	}, []) */
 	return (
 		<>
 			<h2>Add new Component</h2>

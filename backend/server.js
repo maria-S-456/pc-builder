@@ -33,7 +33,7 @@ app.use('/auth', (req,res) => {
 })
 
 // Bring in Routes
-require("./config/db")
+//require("./config/db")
 require("./routes/productRoutes")(app)
 require("./routes/userRoutes")(app)
 

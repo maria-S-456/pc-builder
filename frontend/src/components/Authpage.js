@@ -23,9 +23,9 @@ const Authpage = ({setToken}) => {
 			username,
 			password
 		});
+
 		setToken(token)
 	}
-
 	return(
 		<>
 			
@@ -37,8 +37,7 @@ const Authpage = ({setToken}) => {
 							
 								<label>Email</label>
 								<input type="loginemail" placeholder="Enter email address" onChange={e => setUsername(e.target.value)} />					
-								<input id="loginpassword" type="password" placeholder="Enter password" onChange={e => setPassword(e.target.value)} />								
-							
+								<input id="loginpassword" type="password" placeholder="Enter password" onChange={e => setPassword(e.target.value)} />							
 							<Button variant="primary" type="submit">Login</Button>
 						</Form>
 					</Col>					

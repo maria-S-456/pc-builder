@@ -13,8 +13,8 @@ const Main = () => {
 	}
 
 	return (
-		<>
-		<Tabs style={{justifyContent: 'center', marginBottom: "0.5em"}} variant="pills" defaultActiveKey="Search" id="main-tabs">
+		<div className="main-styles">
+		<Tabs style={{justifyContent: 'center', marginBottom: "0.5em" }} variant="pills" defaultActiveKey="Search" id="main-tabs">
 			<Tab eventKey="Search" title="Search"> 
 				<Dashboard />
 			</Tab>
@@ -22,7 +22,7 @@ const Main = () => {
 				<Mybuildpage />
 			</Tab>
 		</Tabs>
-		</>
+		</div>
 	)
 }
 
