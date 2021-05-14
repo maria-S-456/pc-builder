@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios'
+import {Row, Col, Form} from 'react-bootstrap';
 
 const Registeruser = props => {
 	const [confirmReg, setConfirmReg] = useState("");
@@ -47,6 +48,13 @@ const Registeruser = props => {
 			setErrs(errs.response.data.errors)
 		})
 		}
+		const btnStyle = {
+		backgroundColor: '#6246C1',
+		border: 0,
+		borderRadius: 0,
+		color: '#E8E8E8'
+
+	}
 	
 	return(
 		<div>
@@ -56,45 +64,50 @@ const Registeruser = props => {
 				<h4 style={{color: "green"}}>{confirmReg}</h4>
 				: null
 			}
-			<form onSubmit={register}>
-				<div>
+			<Form onSubmit={register} className="p-3">
+				<Row>
 					<label>Username</label>
 					{
 						errs.username ?
 						<span className="error-text">{errs.username.message}</span>
 						: null
 					}
-					<input type="text" name="username" value={user.username} onChange={(e) => handleChange(e)} />
-				</div>
-				<div>
+					<input className="form-control" type="text" name="username" value={user.username} onChange={(e) => handleChange(e)} />
+				</Row>
+				<Row>
 					<label>Email</label>
 					{
 						errs.email ?
 						<span className="error-text">{errs.email.message}</span>
 						: null
 					}
-					<input type="email" name="email" value={user.email} onChange={handleChange} />
-				</div>
-				<div>
+					<input className="form-control" type="email" name="email" value={user.email} onChange={handleChange} />
+				</Row>
+
+
+
+				<Row>
 					<label>Password</label>
 					{
 						errs.password ?
 						<span className="error-text">{errs.password.message}</span>
 						: null
 					}
-					<input type="password" name="password" value={user.password} onChange={handleChange} />
-				</div>
-				<div>
+					<input className="form-control" type="password" name="password" value={user.password} onChange={handleChange} />
+				</Row>
+				<Row>
 					<label>Confirm Password</label>
 					{
 						errs.confirmPassword ?
 						<span className="error-text">{errs.confirmPassword.message}</span>
 						: null
 					}
-					<input type="password" name="confirmPassword" value={user.confirmPassword} onChange={handleChange} />
-				</div>
-				<button type="submit">Submit</button>
-			</form>
+					<input className="form-control" type="password" name="confirmPassword" value={user.confirmPassword} onChange={handleChange} />
+				</Row>
+				<Row className="mt-4">
+					<button style={btnStyle} className="form-control" type="submit">Register</button>
+				</Row>
+			</Form>
 		</div>
 	)
 }

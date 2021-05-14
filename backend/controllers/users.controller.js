@@ -29,7 +29,7 @@ module.exports = {
 							if(passwordMatches){
 								//console.log("Credentials are valid!");
 								res.cookie(
-									"userToken",
+									"usertoken",
 									jwt.sign({_id: user._id}, process.env.JWT_SECRET),
 									{
 										httpOnly: true

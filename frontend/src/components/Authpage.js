@@ -1,51 +1,70 @@
 import React, {useState} from 'react';
 import {Form, Container, Row, Col, Button} from 'react-bootstrap';
-//import PropTypes from 'prop-types';
 import axios from 'axios'
 import {navigate} from '@reach/router'
+import Registeruser from './Registeruser'
+import {useHistory} from 'react-router-dom'
 
-function Authpage({setLoggedIn}){
-
-
-	
+const Authpage = props => {	
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
 
+	let history = useHistory();
 	const login = event => {
-		event.preventDefault();
+
+		event.preventDefault();		
 		axios.post("http://localhost:5000/api/users/login", 
-		{email, password},
+		{
+			email, password
+		},
 		{
 			withCredentials: true
 		}
 		)
 		.then((res) => {
 			console.log(res);
-			navigate("/main")
+
+			history.push("/main")	
 		})
-		.catch(err => {
-			console.log(err.response);
-			setErrorMessage(err.response.data.msg)
+		.catch((err) => {
+			console.log(err);
+			setErrorMessage(err)
 		})
 	} 
-	
+	const btnStyle = {
+		backgroundColor: '#6246C1',
+		border: 0,
+		borderRadius: 0,
+
+	}
 	return(
 		<>
 			
 			<Container>
 				<Row>
-					<Col>
-						 /*<p>{errorMessage ? errorMessage : ""}</p> */
-						<Form className='my-10' /*onSubmit={login} */>
-							<h2>Login</h2>
-							
+					<Col className='col-md-2'></Col>
+					<Col className='col-md-3 shadow-lg formColor'>
+						<h2>Login</h2>
+						<Form onSubmit={login} className="p-3">														
+							<Row>
 								<label>Email</label>
-								<input id="loginemail" type="text" name="email" placeholder="Enter email address" onChange={(e) => setEmail(e.target.value)} />					
-								<input id="loginpassword" type="password" name="password" placeholder="Enter password" onChange={(e) => setPassword(e.target.value)} />							
-							<Button variant="primary" type="submit">Login</Button>
+								<input className="form-control" id="loginemail" type="text" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />					
+							</Row>
+							<Row>
+								<label>Password</label>
+								<input className="form-control" id="loginpassword" type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />							
+							</Row>
+							<Row className='mt-4'>
+								<Button className="form-control" style={btnStyle} type="submit">Login</Button>
+							</Row>
 						</Form>
-					</Col>					
+					</Col>
+					<Col className='col-md-2'></Col>
+					<Col className='col-md-3 shadow-lg formColor'>	
+						<Registeruser />	
+					</Col>
+					<Col className='col-md-2'></Col>			
 				</Row>
 			</Container>
 		</>

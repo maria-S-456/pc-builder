@@ -32,11 +32,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 // tokens
-app.use('/auth', (req,res) => {
-	res.send({
-		token: 'test123'
-	})
-})
+
 
 // Bring in Routes
 //require("./config/db")

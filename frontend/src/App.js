@@ -11,8 +11,9 @@ const App = () => {
   return (
     <div className="App">
     <Header />
+    
     <Router>
-      <Route path='/' component={Registeruser} />
+     
       <Route path='/auth' component={Authpage} />
       <Route path='/main' component={Main} />
       <Route path='/new' component={Newpart} />

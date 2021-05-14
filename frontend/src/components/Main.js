@@ -5,6 +5,7 @@ import {Tabs, Tab} from 'react-bootstrap';
 import Authpage from './Authpage';
 
 const Main = () => {
+	//console.log(document.cookie)
 	return (
 		<div className="main-styles">
 		<Tabs style={{justifyContent: 'center', marginBottom: "0.5em" }} variant="pills" defaultActiveKey="Search" id="main-tabs">

@@ -1,17 +1,17 @@
 .App {
   text-align: center;
-  background-color: #21A2E8;
+  background-color: #E8E8E8
 }
 .tab-list-active {
-  background-color: #3A7BD5;
+  background-color: #1661AA;
   }
 
 .main-styles{
-	background-color: #FFFFFF;
+	background-color: #B1BCDB;
 	padding: 20px;
-	margin-right: 30px;
-	margin-left: 30px;
-	min-height: 500px;
+	margin-right: 5rem;
+	margin-left: 5rem;
+	min-height: 80vh
 }
 .Row{
 	background-color: lightblue;
@@ -25,4 +25,18 @@
 .grow:hover {
     transform: scale(1.02);
     cursor: pointer;
+}
+.formColor{
+	background: linear-gradient(to top right, #382B57 0%, #252F5A 100%);
+}
+input[type=text], input[type=password]{
+	background-color: #493F65;
+	border-radius: 0px;
+	border: 0;
+}
+label, h2{
+	color: #E8E8E8;
+}
+h1{
+	font-family: arial
 }
