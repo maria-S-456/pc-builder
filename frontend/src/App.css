@@ -19,6 +19,9 @@
 	padding: .2rem;
 	border-radius: 5px
 }
+.Row{
+	text-align: left
+}
 .grow { 
     transition: all .2s ease-in-out;
 }

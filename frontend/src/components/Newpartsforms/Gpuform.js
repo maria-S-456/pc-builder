@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Form} from 'react-bootstrap';
+import axios from 'axios'
 
 const Gpuform = () => {
 	return (

@@ -8,11 +8,7 @@ const UserSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    required: [true, "Email is required"],
-    validate: {
-      validator: val => /^([\w-\.]+@([\w-]+\.)+[\w-]+)?$/.test(val),
-      message: "Please enter a valid email"
-    }
+    required: [true, "Email is required"]
   },
   password: {
     type: String,
@@ -23,30 +19,6 @@ const UserSchema = new mongoose.Schema({
     type: String
   }]
 }, {timestamps: true});
-
-
-// validate password
-UserSchema.virtual("confirmPassword")
-  .get(()=> this._confirmPassword)
-  .set(value => this._confirmPassword = value)
-
-UserSchema.pre("validate", function(next){
-  if(this.password !== this.confirmPassword){
-    this.invalidate("confirmPassword", "Password must match!")
-  }
-  next();
-})
-
-// Intercept the save function! (before we store anything)
-// and "hash" the password before we store it!
-
-UserSchema.pre("save", function(next){
-  bcrypt.hash(this.password, 10)
-    .then((hashedPw) => {
-      this.password = hashedPw;
-      next();
-    })
-})
 
 const User = mongoose.model("users", UserSchema)
 module.exports = User

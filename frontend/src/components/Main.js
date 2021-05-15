@@ -4,8 +4,9 @@ import Mybuildpage from './Mybuildpage';
 import {Tabs, Tab} from 'react-bootstrap';
 import Authpage from './Authpage';
 
-const Main = () => {
-	//console.log(document.cookie)
+const Main = (props) => {
+	const [userId, setUserId] = useState("");
+	//console.log(props.users)
 	return (
 		<div className="main-styles">
 		<Tabs style={{justifyContent: 'center', marginBottom: "0.5em" }} variant="pills" defaultActiveKey="Search" id="main-tabs">
@@ -13,7 +14,7 @@ const Main = () => {
 				<Dashboard />
 			</Tab>
 			<Tab eventKey="MyBuild" title="My Build"> 
-				<Mybuildpage />
+				<Mybuildpage users={props.usrs} setUserId={setUserId} />
 			</Tab>
 		</Tabs>
 		</div>

@@ -22,20 +22,6 @@ const Caseform = () => {
     const [top140, setTop140] = useState(false);
     const [errs, setErrs] = useState({});
 
-    // Checkboxes
-    /*
-    const state = {
-    	front120: false,
-    	front140: false,
-    	rear120: false,
-    	rear140: false,
-    	top120: false,
-    	top140: false,
-    	bottom120: false,
-    	bottom140: false
-    }
-    */
-
     const createCase = (e) => {
     	e.preventDefault();
     	axios.post("http://localhost:5000/api/products", {

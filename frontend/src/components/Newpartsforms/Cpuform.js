@@ -1,7 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Form, Button} from 'react-bootstrap';
+import axios from 'axios'
 
 const Cpuform = () => {
+	
+	const [partType, setPartType] = useState("");
+	const [name, setName] = useState("");
+	const [brand, setBrand] = useState("");
+	const [series, setSeries] = useState("");
+	const [size, setSize] = useState("");
+    const [errs, setErrs] = useState({});
+
+    const createCase = (e) => {
+    	e.preventDefault();
+    	axios.post("http://localhost:5000/api/products", {
+    		
+    		name: name,
+    		partType: "casefan",
+    		brand: brand,
+    		series: series,
+    		size: size
+    	})
+    	.then((res) => {
+    		if(res.data.errors){
+    			setErrs(res.data.errors)
+    		} else{
+    			window.location = "/main";
+    		}
+    	})
+    	.catch((err) => console.log(err));
+    } 
+
 	return (
 		<div>
 			<Form>
