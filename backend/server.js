@@ -31,16 +31,9 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-// tokens
-
-
 // Bring in Routes
-//require("./config/db")
 require("./routes/productRoutes")(app)
 require("./routes/userRoutes")(app)
-
-//app.use('/api/mybuild', mybuildRoutes)
-//app.use('/api', productRoutes)
-//const PORT = process.env.PORT || 5000
+require("./routes/mybuildRoutes")(app)
 
 app.listen(5000, () => console.log("Listening on Port 5000"))
