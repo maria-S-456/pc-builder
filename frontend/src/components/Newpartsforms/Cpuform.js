@@ -3,7 +3,7 @@ import {Form, Button} from 'react-bootstrap';
 import axios from 'axios'
 
 const Cpuform = () => {
-	
+
 	const [partType, setPartType] = useState("");
 	const [name, setName] = useState("");
 	const [brand, setBrand] = useState("");
@@ -54,9 +54,9 @@ const Cpuform = () => {
 				    	<option>8</option>
 				    	<option>10</option>
 				    	<option>12</option>
-				    </Form.Control>
+				    </Form.Control>	
 				    <Form.Label>Memory Type</Form.Label>
-					<Form.Control type="text" placeholder="Socket Type" />		
+					<Form.Control type="text" placeholder="Memory Type (DDR4, DDR3)" />			   	
 				</Form.Group>
 				<Button variant="primary" type="submit">Submit</Button>
 			</Form>

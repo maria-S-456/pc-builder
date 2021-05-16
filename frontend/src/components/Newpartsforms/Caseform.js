@@ -8,8 +8,11 @@ const Caseform = () => {
 	const [partType, setPartType] = useState("");
 	const [name, setName] = useState("");
 	const [brand, setBrand] = useState("");
-    const [formfactor, setFormfactor] = useState("");
-    const [compatibility, setCompatibility] = useState("");
+    const [caseType, setCaseType] = useState("");
+    const [mbatx, setMbatx] = useState(false);
+    const [mbmicroatx, setMbmicroatx] = useState(false);
+    const [mbminiitx, setMbminiitx] = useState(false);
+    const [mbnanoitx, setMbnanoitx] = useState(false);
     const [gpulength, setGpulength] = useState("");
     const [psulength, setPsulength] = useState("");
     const [front120, setFront120] = useState(false);
@@ -29,7 +32,10 @@ const Caseform = () => {
     		name: name,
     		partType: "case",
     		brand: brand,
-    		compatibility: compatibility,
+    		mbatx: mbatx,
+    		mbmicroatx: mbmicroatx,
+    		mbminiitx: mbminiitx,
+    		mbnanoitx: mbnanoitx,
     		gpulength: gpulength,
     		psulength: psulength,
     		front120: front120,
@@ -61,7 +67,7 @@ const Caseform = () => {
 					<Form.Control name="brand" type="text" placeholder="Brand" onChange={(e) => setBrand(e.target.value)} />
 					
 					<Form.Label>Motherboard Size Compatibility</Form.Label>
-				    <Form.Check label="ATX" />
+				    <Form.Check label="ATX" onChange={(e) => setMbatx(e.target.value)} />
 				    <Form.Check label="Micro-ATX" />
 				    <Form.Check label="Mini-ITX" />
 				    <Form.Check label="Nano-ITX" />	

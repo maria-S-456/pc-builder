@@ -59,9 +59,7 @@ const Dashboard = () => {
 					<Tab eventKey="cpufan" title="CPU Fan"> 
 						<Cpufanpage prod={products} />
 					</Tab>
-					<Tab eventKey="testpage" title="Test"> 
-						<Testpartpage prod={products} />
-					</Tab>
+					
 				</Tabs>
 			</Container>
 		</>
