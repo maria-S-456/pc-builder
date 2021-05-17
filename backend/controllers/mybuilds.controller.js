@@ -9,8 +9,13 @@ module.exports = {
 	},
 	getOne: (req, res) => {
 		Mybuild.findById(req.params.id)
-		.then((myb) => res.json(myb))
+		.then((mybuild) => res.json(mybuild))
 		.catch((err) => res.json(err))
+	},
+	update: (req, res) => {
+		Mybuild.findByIdAndUpdate(req.params.id, req.body, {new: true})
+		.then((mybuilds) => res.json(mybuilds))
+		.catch((err) => res.json(err));
 	}
 	
 };

@@ -1,36 +1,100 @@
 const mongoose = require('mongoose');
 
 const MybuildSchema = new mongoose.Schema({
-  selectedCasefan: {
+  name: {
+    type: String,
+    required: true
+  },
+  partType: {
+    type: String,
+    required: true
+  },
+  brand:{
     type: String
   },
-  selectedCase:{
+  capacity:{
     type: String
   },
-  selectedCpufan:{
+  unit:{
     type: String
   },
-  selectedCpu:{
+  memory_type:{
     type: String
   },
-  selectedGpu:{
+  img:{
     type: String
   },
-  selectedHdd:{
-    type:String
-  },
-  selectedMb:{
+  socketType:{
     type: String
   },
-  selectedMemory:{
+  numOfSlots:{
+    type: Number
+  },
+  memorySlotPins:{
+    type: Number
+  },
+  maxMemorySupported:{
+    type: Number
+  },
+  // standardize memory name later
+  memoryStandard:{
     type: String
   },
-  selectedPsu:{
+  memory_type:{
     type: String
   },
-  selectedSsd: {
+  cpubrand:{
+    type: String
+  },
+  supportedChannel:{
+    type: String
+  },
+  formFactor:{
+    type: String
+  },
+  storageSsd:{
+    type: Boolean
+  },
+  storageHhd:{
+    type: Boolean
+  },
+  storagem2:{
+    type: Boolean
+  },
+  pin_type:{
+    type: Number
+  },
+  series:{
+    type: String
+  },
+  input_volt_min:{
+    type: Number
+  },
+  input_volt_max:{
+    type: Number
+  },
+  psutype:{
+    type: String
+  },
+  max_power:{
+    type: String
+  },
+  max_psu_length:{
+    type: String
+  },
+  cpuSocketType:{
+    type: String
+  },
+  numCores:{
+    type: String
+  },
+  max_height:{
+    type: String
+  },
+  compatibility:{
     type: String
   }
+
 }, {timestamps: true},
 {collection: 'mybuilds'});
 
