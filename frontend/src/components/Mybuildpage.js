@@ -14,7 +14,7 @@ const Mybuildpage = props => {
 			<Col>
 				<h3>Part Details</h3>
 				
-				<Mybuilddisplay buildid={buildid} mybuilds={props.mybd}/>			
+				<Mybuilddisplay buildid={buildid} mybuilds={props.mybd}/> 			
 			</Col>
 			<Col>
 				<h3>My Parts</h3>

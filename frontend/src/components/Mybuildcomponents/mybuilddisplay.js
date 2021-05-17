@@ -2,8 +2,8 @@ import React from 'react';
 import {Row} from 'react-bootstrap';
 
 
-const Mybuilddisplay = () =>{	
-
+const Mybuilddisplay = (props) =>{	
+	//console.log(props);
 	return (
 		<>
 			

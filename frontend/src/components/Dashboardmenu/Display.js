@@ -2,6 +2,7 @@ import React from 'react';
 import {Row, Col} from 'react-bootstrap';
 
 const Display = (props) =>{
+	//console.log(props.partId)
 	const tableStyle = {
 		textAlign : 'left'
 	}

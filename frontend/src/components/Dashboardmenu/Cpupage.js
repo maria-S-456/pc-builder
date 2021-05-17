@@ -5,7 +5,7 @@ import Display from './Display';
 
 const Cpupage = (props) =>{
 	const [partId, setPartId] = useState("");
-	console.log(props)
+	//console.log(props)
 	return (
 		<>
 		<h2>CPUs</h2>
