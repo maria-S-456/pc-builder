@@ -14,19 +14,39 @@ const Display = (props) =>{
 
 		//console.log(props.mybuilds)
 		props.mybuilds.filter(mybd => mybd.partType === e.partType).map(filter => (
-			
-			//filter = e
-			//console.log(filter) // filter is the old item
-			//console.log(e) // e is the new item
-			
-			
 				axios.put("http://localhost:5000/api/mybuilds/" + filter._id,{
 					partType: e.partType,
 					name: e.name,
 					brand: e.brand,
 					series: e.series,
 					max_gpu_length: e.max_gpu_length,
-					img: e.img
+					img: e.img,
+					capacity: e.capacity,
+					unit: e.unit,
+					memory_type: e.memory_type,
+					socketType: e.socketType,
+					numOfSlots: e.numOfSlots,
+					memorySlotPins: e.memorySlotPins,
+					maxMemorySupported: e.maxMemorySupported,
+					memoryStandard: e.memoryStandard,
+					cpuStandard: e.cpuStandard,
+					cpubrand: e.cpubrand,
+					supportedChannel: e.supportedChannel,
+					formFactor: e.formFactor,
+					storageSsd: e.storageSsd,
+					storageHhd: e.storageHhd,
+					storagem2: e.storagem2,
+					pin_type: e.pin_type,
+					input_volt_min: e.input_volt_min,
+					input_volt_max: e.input_volt_max,
+					psutype: e.psutype,
+					max_power: e.max_power,
+					max_psu_length: e.max_psu_length,
+					cpuSocketType: e.cpuSocketType,
+					numCores: e.numCores,
+					max_height: e.max_height,
+					compatibility: e.compatibility,
+					size: e.size
 				})
 				.then((res) => {
 					if(res.data.errors){

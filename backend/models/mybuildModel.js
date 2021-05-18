@@ -18,9 +18,6 @@ const MybuildSchema = new mongoose.Schema({
   unit:{
     type: String
   },
-  memory_type:{
-    type: String
-  },
   img:{
     type: String
   },
@@ -92,6 +89,9 @@ const MybuildSchema = new mongoose.Schema({
     type: String
   },
   compatibility:{
+    type: String
+  },
+  size:{
     type: String
   }
 

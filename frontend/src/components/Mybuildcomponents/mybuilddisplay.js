@@ -26,7 +26,7 @@ const Mybuilddisplay = (props) =>{
 				
 				<tbody>
 					{	Object.keys(filteredPart).map((value, index) => {
-							if(value !== 'img' && value !== '_id' && value !== 'partType' && filteredPart[Object.keys(filteredPart)[index]] !== '' && typeof filteredPart[Object.keys(filteredPart)[index]] !== "boolean")							
+							if(value !== 'updatedAt' && value !== 'img' && value !== '_id' && value !== 'partType' && filteredPart[Object.keys(filteredPart)[index]] !== '' && typeof filteredPart[Object.keys(filteredPart)[index]] !== "boolean")							
 								return( 
 										<tr key={value} style={tableStyle}>
 											<th>{value}</th>
