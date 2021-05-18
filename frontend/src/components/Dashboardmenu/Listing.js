@@ -3,7 +3,7 @@ import {Row} from 'react-bootstrap';
 
 const Listing = (props) =>{
 	const {setPartId} = props;
-
+	
 	return (
 		<>
 		<h2>Listing</h2>

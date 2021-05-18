@@ -5,12 +5,13 @@ import Display from './Display';
 
 const Gpupage = (props) =>{
 	const [partId, setPartId] = useState("");
+	const [buildid, setBuildid] = useState("");
 	return (
 		<>
 		<h2>GPUs</h2>
 		<Row>
 			<Col>
-				<Display partId={partId} products={props.prod} />			
+				<Display setBuildid={setBuildid} buildid={buildid} partId={partId} products={props.prod} mybuilds={props.mybd} />			
 			</Col>
 			<Col>
 				<Listing setPartId={setPartId} products={props.prod} partType="gpu" />

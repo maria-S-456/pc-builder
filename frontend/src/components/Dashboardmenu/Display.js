@@ -4,14 +4,40 @@ import axios from 'axios'
 import {navigate} from '@reach/router'
 
 const Display = (props) =>{
+	const {setBuildid} = props;
+
 	const tableStyle = {
 		textAlign : 'left'
 	}
 	function updateBuild(e){
-		console.log(e)
+		//console.log(e)
+
+		//console.log(props.mybuilds)
+		props.mybuilds.filter(mybd => mybd.partType === e.partType).map(filter => (
+			
+			//filter = e
+			//console.log(filter) // filter is the old item
+			//console.log(e) // e is the new item
+			
+			
+				axios.put("http://localhost:5000/api/mybuilds/" + filter._id,{
+					partType: e.partType,
+					name: e.name,
+					brand: e.brand,
+					series: e.series,
+					max_gpu_length: e.max_gpu_length,
+					img: e.img
+				})
+				.then((res) => {
+					if(res.data.errors){
+						console.log(res.data.errors)
+					}
+				})
+				.catch((err) => console.log(err))
+			
+		))
+
 	}
-		
-	
 
 return (
 	<>	

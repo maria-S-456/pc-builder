@@ -5,13 +5,14 @@ import Display from './Display';
 
 const Cpupage = (props) =>{
 	const [partId, setPartId] = useState("");
-	//console.log(props)
+	const [buildid, setBuildid] = useState("");
+	//console.log(partId);
 	return (
 		<>
 		<h2>CPUs</h2>
 		<Row>
 			<Col>
-				<Display partId={partId} products={props.prod} />			
+				<Display setBuildid={setBuildid} buildid={buildid} partId={partId} products={props.prod} mybuilds={props.mybd} />			
 			</Col>
 			<Col>
 				<Listing setPartId={setPartId} products={props.prod} partType="cpu" />

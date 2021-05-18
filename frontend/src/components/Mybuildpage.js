@@ -6,6 +6,7 @@ import {Row, Col} from 'react-bootstrap';
 
 const Mybuildpage = props => {
 	const [buildid, setBuildid] = useState("");
+	//console.log(buildid);
 	return (
 		<>
 		<h1>My Build Page</h1>

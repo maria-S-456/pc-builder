@@ -5,7 +5,7 @@ const Mybuilddisplay = (props) =>{
 	const tableStyle = {
 		textAlign : 'left'
 	}
-		
+	//console.log(props.mybuilds)	
 	return (
 		<>
 			{
