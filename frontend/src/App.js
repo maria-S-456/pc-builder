@@ -1,6 +1,6 @@
 import './App.css';
 import Authpage from './components/Authpage';
-import Dashboard from './components/Dashboard';
+//import Dashboard from './components/Dashboard';
 import Newpart from './components/Newpart';
 import Main from './components/Main';
 import Header from './components/Header';
@@ -10,6 +10,7 @@ import {useState, useEffect} from 'react';
 import axios from 'axios'
 
 const App = () => {
+
   const [users, setUsers] = useState([])
 
   useEffect(() => {

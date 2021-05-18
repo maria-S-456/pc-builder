@@ -10,7 +10,7 @@ const Mybuildlisting = (props) =>{
 		
 
 			{props.mybuilds.map(filteredPart => (
-				<Row keys={filteredPart._id} className="Row grow" onClick={(e) => setBuildid(e.target.getAttribute('name'))} name={filteredPart._id}>
+				<Row key={filteredPart._id} className="Row grow" onClick={(e) => setBuildid(e.target.getAttribute('name'))} name={filteredPart._id}>
 				{filteredPart.partType} : {filteredPart.name}
 				</Row>
 			))}

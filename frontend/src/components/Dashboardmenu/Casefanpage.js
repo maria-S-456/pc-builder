@@ -10,7 +10,7 @@ const Casefanpage = (props) =>{
 		<h2>Case Fans</h2>
 		<Row>
 			<Col>
-				<Display partId={partId} products={props.prod} />			
+				<Display  partId={partId} products={props.prod} />			
 			</Col>
 			<Col>
 				<Listing setPartId={setPartId} products={props.prod} partType="casefan" />

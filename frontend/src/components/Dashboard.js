@@ -10,11 +10,10 @@ import Mbpage from './Dashboardmenu/Mbpage';
 import Memorypage from './Dashboardmenu/Memorypage';
 import Psupage from './Dashboardmenu/Psupage';
 import Ssdpage from './Dashboardmenu/Ssdpage';
-import Testpartpage from './Dashboardmenu/Testpartpage';
 import axios from 'axios';
 
 const Dashboard = () => {
-	const [products, setProducts] = useState([])
+	const [products, setProducts] = useState([]);
 
 	useEffect(() => {
 		const fetchProducts = async () => {
@@ -25,12 +24,13 @@ const Dashboard = () => {
 
 		fetchProducts()
 	}, [])
+
 	return (
 		<>
 			<Container>
 				<Tabs defaultActiveKey="MB" id="menu-tabs">
 					<Tab eventKey="mb" title="MB"> 
-						<Mbpage prod={products} />
+						<Mbpage  prod={products} />
 					</Tab>
 					<Tab eventKey="cpu" title="CPU"> 
 						<Cpupage prod={products} />
@@ -39,16 +39,16 @@ const Dashboard = () => {
 						<Hddpage prod={products} />
 					</Tab>
 					<Tab eventKey="ssd" title="SSD"> 
-						<Ssdpage prod={products} />
+						<Ssdpage  prod={products} />
 					</Tab>
 					<Tab eventKey="memory" title="Memory"> 
-						<Memorypage prod={products} />
+						<Memorypage  prod={products} />
 					</Tab>
 					<Tab eventKey="case" title="Case"> 
-						<Casepage prod={products} />
+						<Casepage  prod={products} />
 					</Tab>
 					<Tab eventKey="psu" title="PSU"> 
-						<Psupage prod={products} />
+						<Psupage  prod={products} />
 					</Tab>
 					<Tab eventKey="gpu" title="GPU"> 
 						<Gpupage prod={products} />
