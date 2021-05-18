@@ -22,7 +22,6 @@ const App = () => {
 
     fetchUsers()
   }, [])
-  //console.log({users}) // yes!!
   return (
     <div className="App">
     <Header />
@@ -30,7 +29,7 @@ const App = () => {
     <Router>
      
       
-      <Route usrs={users} path='/main' component={Main} />
+      <Route usrs={users} path='/' component={Main} />
       <Route usrs={users} path='/new' component={Newpart} />
 
     </Router>

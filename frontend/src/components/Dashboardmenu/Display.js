@@ -45,7 +45,11 @@ const Display = (props) =>{
 					numCores: e.numCores,
 					max_height: e.max_height,
 					compatibility: e.compatibility,
-					size: e.size
+					size: e.size,
+					caseType: e.caseType,
+					psulength: e.psulength,
+					gpulength: e.gpulength
+
 				})
 				.then((res) => {
 					if(res.data.errors){
@@ -101,7 +105,7 @@ return (
 			{/* Add to build button */}
 			{Object.keys(filteredPart).map((value, index) => {
 				if(value === '_id')							
-					return <button onClick={(e) => {updateBuild(filteredPart)}}>
+					return <button className="btn btn-primary" onClick={(e) => {updateBuild(filteredPart)}}>
 						Add to build
 					</button>
 			})}

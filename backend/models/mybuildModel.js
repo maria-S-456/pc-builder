@@ -79,6 +79,18 @@ const MybuildSchema = new mongoose.Schema({
   max_psu_length:{
     type: String
   },
+  max_gpu_length:{
+    type: String
+  },
+  caseType:{
+    type: String
+  },
+  gpulength:{
+    type: String
+  },
+  psulength:{
+    type: String
+  },
   cpuSocketType:{
     type: String
   },
