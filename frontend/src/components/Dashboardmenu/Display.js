@@ -4,8 +4,6 @@ import axios from 'axios'
 import {navigate} from '@reach/router'
 
 const Display = (props) =>{
-	//const [mybuilds, setMybuilds] = useState([])
-	//console.log(props.partId)
 	const tableStyle = {
 		textAlign : 'left'
 	}

@@ -12,8 +12,7 @@ const Mybuildpage = props => {
 		
 		<Row>
 			<Col>
-				<h3>Part Details</h3>
-				
+				<h3>Part Details</h3>				
 				<Mybuilddisplay buildid={buildid} mybuilds={props.mybd}/> 			
 			</Col>
 			<Col>

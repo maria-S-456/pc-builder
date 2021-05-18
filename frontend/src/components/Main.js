@@ -5,65 +5,40 @@ import {Tabs, Tab} from 'react-bootstrap';
 import Authpage from './Authpage';
 import axios from 'axios';
 
-const Main = (props) => {
-	const [myBuild, setMyBuild] = useState([])
-
-	//const [selected, setSelect] = useState([])
-
-/*
- const setSelected  = (i)=>{
-
- 	myBuild.forEach((obj,index)=>{
- 		console.log(index)
- 		if (obj.partType === i.partType){
- 			const copyBuilds = {...myBuild}
-
- 			copyBuilds[index] =i
- 			setMyBuild(copyBuilds)
- 			console.log("switche data=>",myBuild)
-
- 		}
- 	})
-
-
-
- 	for (let a of myBuild){
- 		
- 	}
-
- 	setMyBuild(i)
-
-
-
- }
-
- useEffect(()=>{
- 	console.log('herrrrrrr===>',myBuild)
-
- },[myBuild])
-
-*/
+const Main = () => {
+	const [myBuild, setMyBuild] = useState([]);
+	const [products, setProducts] = useState([]);
 
 	useEffect(() => {
 		const fetchMyBuild = async () => {
 			const {data} = await axios.get('/api/mybuilds')
-
 			setMyBuild(data)
 		}
-		fetchMyBuild()
+		fetchMyBuild()		
+	}, [])
 
-		
+
+	useEffect(() => {
+		const fetchProducts = async () => {
+			const {data} = await axios.get('/api/products')
+
+			setProducts(data)
+		}
+
+		fetchProducts()
 	}, [])
 	
 	return (
 		<div className="main-styles">
 		<Tabs style={{justifyContent: 'center', marginBottom: "0.5em" }} variant="pills" defaultActiveKey="Search" id="main-tabs">
+
 			<Tab eventKey="Search" title="Search"> 
-				<Dashboard  mybd={myBuild} />
+				<Dashboard mybd={myBuild} prod={products} />
 			</Tab>
 			<Tab eventKey="MyBuild" title="My Build"> 
-				<Mybuildpage mybd={myBuild} />
+				<Mybuildpage mybd={myBuild} prod={products} />
 			</Tab>
+			
 		</Tabs>
 		</div>
 	)

@@ -29,7 +29,7 @@ const App = () => {
 
     <Router>
      
-      <Route users={users} path='/auth' component={Authpage} />
+      //<Route users={users} path='/auth' component={Authpage} />
       <Route usrs={users} path='/main' component={Main} />
       <Route usrs={users} path='/new' component={Newpart} />
 
