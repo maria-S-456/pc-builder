@@ -9,10 +9,9 @@ const Display = (props) =>{
 	const tableStyle = {
 		textAlign : 'left'
 	}
-	function updateBuild(e){
-		//console.log(e)
 
-		//console.log(props.mybuilds)
+	function updateBuild(e){
+
 		props.mybuilds.filter(mybd => mybd.partType === e.partType).map(filter => (
 				axios.put("http://localhost:5000/api/mybuilds/" + filter._id,{
 					partType: e.partType,
@@ -53,12 +52,10 @@ const Display = (props) =>{
 						console.log(res.data.errors)
 					}
 				})
-				.catch((err) => console.log(err))
-			
+				.catch((err) => console.log(err))			
 		))
 
 	}
-
 return (
 	<>	
 		{
